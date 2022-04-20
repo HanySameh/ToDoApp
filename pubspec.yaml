@@ -1,0 +1,52 @@
+name: to_do
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  get_storage: ^2.0.3
+  get: ^4.3.8
+  flutter_local_notifications: ^8.2.0
+  flutter_native_timezone: ^2.0.0
+  intl: ^0.17.0
+  google_fonts: ^2.1.0
+  date_picker_timeline: ^1.2.3
+  sqflite: ^2.0.0+4
+  flutter_staggered_animations: ^1.0.0
+  flutter_svg: ^0.22.0
+  rxdart: ^0.27.2
+  smooth_page_indicator: ^1.0.0+2
+  easy_splash_screen: ^1.0.3
+  flutter_custom_clippers: ^2.0.0
+  calendar_timeline: ^1.0.4
+  flutter_zoom_drawer: ^3.0.1
+  font_awesome_flutter: ^10.1.0
+  url_launcher: ^6.0.20
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.9.2
+  flutter_lints: ^1.0.0
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "images/todo_icon.png"
+
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - images/
