@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
 import 'package:get/get.dart';
@@ -68,7 +67,7 @@ class NotifyHelper {
     );
   }
 
-  cancleNotification(Task task) async {
+  cancelNotification(Task task) async {
     await flutterLocalNotificationsPlugin.cancel(task.id!);
   }
 
@@ -99,8 +98,8 @@ class NotifyHelper {
   tz.TZDateTime _nextInstanceOfTenAM(
       int hour, int minutes, int remind, String repeat, String date) {
     final tz.TZDateTime now = tz.TZDateTime.now(tz.local);
-    var formatedDate = DateFormat.yMd().parse(date);
-    final tz.TZDateTime fd = tz.TZDateTime.from(formatedDate, tz.local);
+    var formattedDate = DateFormat.yMd().parse(date);
+    final tz.TZDateTime fd = tz.TZDateTime.from(formattedDate, tz.local);
 
     tz.TZDateTime scheduledDate =
         tz.TZDateTime(tz.local, fd.year, fd.month, fd.day, hour, minutes);
@@ -108,15 +107,15 @@ class NotifyHelper {
     if (scheduledDate.isBefore(now)) {
       if (repeat == 'Daily') {
         scheduledDate = tz.TZDateTime(tz.local, now.year, now.month,
-            (formatedDate.day) + 1, hour, minutes);
+            (formattedDate.day) + 1, hour, minutes);
       }
       if (repeat == 'Weekly') {
         scheduledDate = tz.TZDateTime(tz.local, now.year, now.month,
-            (formatedDate.day) + 7, hour, minutes);
+            (formattedDate.day) + 7, hour, minutes);
       }
       if (repeat == 'Monthly') {
         scheduledDate = tz.TZDateTime(tz.local, now.year,
-            (formatedDate.month) + 1, formatedDate.day, hour, minutes);
+            (formattedDate.month) + 1, formattedDate.day, hour, minutes);
       }
       scheduledDate = taskRemind(remind, scheduledDate);
     }

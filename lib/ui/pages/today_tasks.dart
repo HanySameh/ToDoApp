@@ -267,7 +267,7 @@ class _TodayTasksState extends State<TodayTasks> {
                   buildBottomSheet(
                     label: 'Task Completed',
                     onTap: () {
-                      notifyHelper.cancleNotification(task);
+                      notifyHelper.cancelNotification(task);
                       taskController.taskCompleted(task.id!);
                       Get.back();
                     },
@@ -286,7 +286,7 @@ class _TodayTasksState extends State<TodayTasks> {
                 buildBottomSheet(
                   label: 'Delete Task',
                   onTap: () {
-                    notifyHelper.cancleNotification(task);
+                    notifyHelper.cancelNotification(task);
                     taskController.deleteTasks(task);
                     Get.back();
                   },

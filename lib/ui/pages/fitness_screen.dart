@@ -280,7 +280,7 @@ class _FitnessTasksState extends State<FitnessTasks> {
                   buildBottomSheet(
                     label: 'Task Completed',
                     onTap: () {
-                      notifyHelper.cancleNotification(task);
+                      notifyHelper.cancelNotification(task);
                       taskController.taskCompleted(task.id!);
                       Get.back();
                     },
@@ -299,7 +299,7 @@ class _FitnessTasksState extends State<FitnessTasks> {
                 buildBottomSheet(
                   label: 'Delete Task',
                   onTap: () {
-                    notifyHelper.cancleNotification(task);
+                    notifyHelper.cancelNotification(task);
                     taskController.deleteTasks(task);
                     Get.back();
                   },
